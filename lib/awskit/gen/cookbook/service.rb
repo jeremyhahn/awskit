@@ -15,6 +15,7 @@ module Awskit::Gen::Cookbook
 
     def gen
       gen_dirs
+      gen_metadata_rb
       gen_kitchen_yml
       gen_vagrantfile
       gen_readme
@@ -35,6 +36,15 @@ module Awskit::Gen::Cookbook
       recipes = "#{output_path}/recipes"
       Dir.mkdir attrs unless File.exist?(attrs)
       Dir.mkdir recipes unless File.exist?(recipes)
+    end
+
+    def gen_metadata_rb
+      Awskit::Gen::TemplateWriter.new(
+        :output_path => output_path,
+        :template => template_path('metadata.rb'),
+        :binding => kitchen_template_binding,
+        :filename => 'metadata.rb'
+      ).write!
     end
 
     def gen_kitchen_yml
