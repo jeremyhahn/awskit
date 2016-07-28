@@ -94,7 +94,7 @@ module Awskit::Gen::Cookbook
       FileUtils.cp(static_file('Thorfile'), "#{output_path}/Thorfile")
       FileUtils.cp(static_file('.gitignore'), "#{output_path}/.gitignore")
       FileUtils.cp(static_file('test/integration/default/serverspec/spec_helper.rb'), "#{output_path}/test/integration/default/serverspec/spec_helper.rb")
-      FileUtils.cp(static_file('test/integration/default/serverspec/localhost/common_spec.rb'), "#{output_path}/test/integration/default/serverspec/localhost/common_spec.rb")
+      FileUtils.cp(static_file('test/integration/default/serverspec/localhost/default_spec.rb'), "#{output_path}/test/integration/default/serverspec/localhost/default_spec.rb")
     end
 
     def static_file(file)
