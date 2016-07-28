@@ -9,7 +9,7 @@ module Awskit::Gen::Toolkit
 
     def initialize(options)
       self.options = options
-      self.output_path = options[:path] || "./#{toolkit_name}"
+      self.output_path = "#{options[:path]}./#{toolkit_name}" || "./#{toolkit_name}"
     end
 
     def gen
